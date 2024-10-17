@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+</head>
+<body>
+    <canvas id="snake_canvas" width="400" height="400"></canvas>
+    <button id="reset_button">Reset Game</button>
+    <script type="module">
+        import init, { start, reset_game } from './pkg/wasm_snake.js';
+
+        async function run() {
+            await init();
+            start();
+        }
+
+        run();
+
+        // Add event listener to reset the game on button click
+        document.getElementById("reset_button").addEventListener("click", () => {
+            reset_game();
+        });
+
+    </script>
+</body>
+</html>

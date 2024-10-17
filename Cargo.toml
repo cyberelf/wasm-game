@@ -1,0 +1,17 @@
+[package]
+name = "wasm-snake"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+js-sys = "0.3.72"
+lazy_static = "1.5.0"
+wasm-bindgen = "0.2.95"
+web-sys = { version = "0.3.72", features = ["Window", "Document", "HtmlCanvasElement", "CanvasRenderingContext2d", "KeyboardEvent"] }
+wee_alloc = "0.4.5"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+panic = "abort"
